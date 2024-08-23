@@ -87,8 +87,23 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route("/add_post")
+@app.route("/add_post", methods=["GET", "POST"])
 def add_post():
+    if request.method == "POST":
+        post = {
+            "post_title": request.form.get("post_title"),
+            "category_name": request.form.get("category_name"),
+            "artist_name": request.form.get("artist_name"),
+            "venue": request.form.get("venue"),
+            "concert_date": request.form.get("concert_date"),
+            "favourite_song": request.form.get("favourite_song"),
+            "post_description": request.form.get("post_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.posts.insert_one(post)
+        flash("Post Successfully Added")
+        return redirect(url_for("get_posts"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_post.html", categories=categories)
 

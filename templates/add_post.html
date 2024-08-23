@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-sm-12 col-lg-8 offset-lg-2 mt-5">
-            <form class="card" method="POST" action="">
+            <form class="card" method="POST" action="{{ url_for('add_post') }}">
                 <div class="card-body">
                     <h1 class="card-title text-center">Add Post</h1>
                     <label for="post_title" class="form-label">Post Title</label>
@@ -20,7 +20,7 @@
                     <input type="text" id="artist_name" name="artist_name" minlength="2" maxlength="30"
                         class="form-control" required>
                     <label for="venue" class="form-label">Venue</label>
-                    <input type="text" id="venue" name="venue" minlength="5" maxlength="30"
+                    <input type="text" id="venue" name="venue" minlength="5" maxlength="50"
                         class="form-control" required>
                     <label for="concert_date" class="form-label">Concert Date</label>
                     <input type="date" name="concert_date" id="concert_date" class="form-control" max="2024-08-23" required>
@@ -30,7 +30,7 @@
                     <label for="post_description" class="form-label">Post Description</label>
                     <textarea id="post_description" name="post_description" minlength="5" maxlength="350"
                         class="form-control" required></textarea>
-                    <button type="submit" class="form-control btn btn-lg btn-primary mt-3">Submit</button>
+                    <button type="submit" class="form-control btn btn-lg btn-primary mt-3">Add Post</button>
                 </div>
             </form>
         </div>
