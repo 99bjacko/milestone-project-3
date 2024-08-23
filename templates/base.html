@@ -54,13 +54,13 @@
         </nav>
     </header>
 
-    <section>
+    <section mt-3>
         <!-- displays flash messages -->
          {% with messages = get_flashed_messages()%}
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashmsg">
-                        <h3 class="bg-primary text-center">{{ message }}</h3>
+                        <h3 class="bg-light text-center">{{ message }}</h3>
                     </div>
                 {% endfor %}
             {% endif %}
