@@ -7,9 +7,11 @@
                 <div class="card-body">
                     <h1 class="card-title text-center">Register</h1>
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" id="username" name="username" class="form-control validate">
+                    <input type="text" id="username" name="username" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" name="password" class="form-control validate">
+                    <input type="password" id="password" name="password" minlength="5" maxlength="20"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required>
                     <button type="submit" class="form-control btn btn-lg btn-primary mt-3">Register</button>
                 </div>
             </form>
