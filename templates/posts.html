@@ -1,27 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for post in posts %}
-        {{ post.post_name }}<br>
-        {{ post.category_name }}<br>
-        {{ post.artist_name }}<br>
-        {{ post.venue }}<br>
-        {{ post.concert_date }}<br>
-        {{ post.favourite_song }}<br>
-        {{ post.post_description }}<br>
-    {% endfor %}
-
     <div class="row">
-        <div class="col-sm-12 col-lg-6">
+        {% for post in posts %}
+        <div class="col-sm-12 col-lg-6 mt-5">
             <div class="card">
                 <img src="..." class="card-img-top" alt="Gig Image">
-                <div class="card-body">
-                    <h4 class="card-title">Post Title</h4>
-                    <p class="card-text">Some example text can go here, this will be a description of the gig experience</p>
+                <div class="card-body text-center">
+                    <h4 class="card-title">{{ post.post_name }}</h4>
+                    <p class="card-text">{{ post.post_description }}</p>
                     <a href="#" class="btn btn-primary">View Post</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
