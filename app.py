@@ -89,7 +89,8 @@ def logout():
 
 @app.route("/add_post")
 def add_post():
-    return render_template("add_post.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_post.html", categories=categories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
