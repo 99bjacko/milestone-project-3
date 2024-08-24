@@ -7,30 +7,39 @@
                 <div class="card-body">
                     <h1 class="card-title text-center">Edit Post</h1>
                     <label for="post_title" class="form-label">Post Title</label>
-                    <input type="text" id="post_title" name="post_title" minlength="5" maxlength="30"
+                    <input type="text" id="post_title" name="post_title" minlength="5" maxlength="30" value="{{ post.post_title}}"
                         class="form-control" required>
                     <label id="category_name">Category</label>
-                    <select id="category_name" name="category_name" class="form-select form-control mt-2" aria-label="Category Selection Dropdown" required>
-                        <option value="" disabled selected>Choose Category</option>
+                    <select id="category_name" name="category_name" class="form-select form-control mt-2"
+                        aria-label="Category Selection Dropdown" required>
+                        <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% if category.category_name == post.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="artist_name" class="form-label">Artist Name</label>
                     <input type="text" id="artist_name" name="artist_name" minlength="2" maxlength="30"
-                        class="form-control" required>
+                        value="{{ post.artist_name }}" class="form-control" required>
                     <label for="venue" class="form-label">Venue</label>
-                    <input type="text" id="venue" name="venue" minlength="5" maxlength="50"
+                    <input type="text" id="venue" name="venue" minlength="5" maxlength="50" value="{{ post.venue }}"
                         class="form-control" required>
                     <label for="concert_date" class="form-label">Concert Date</label>
-                    <input type="date" name="concert_date" id="concert_date" class="form-control" max="2024-08-23" required>
+                    <input type="date" name="concert_date" id="concert_date" class="form-control" max="2024-08-23" value="{{ post.concert_date }}"
+                        required>
                     <label for="favourite_song" class="form-label">Favourite Song</label>
                     <input type="text" id="favourite_song" name="favourite_song" minlength="2" maxlength="30"
-                        class="form-control" required>
+                        value="{{ post.favourite_song }}" class="form-control" required>
                     <label for="post_description" class="form-label">Post Description</label>
                     <textarea id="post_description" name="post_description" minlength="5" maxlength="350"
-                        class="form-control" required></textarea>
+                        class="form-control" required>
+                        {{- post.post_description -}}
+                    </textarea>
                     <button type="submit" class="form-control btn btn-lg btn-primary mt-3">Edit Post</button>
+                    <a href="{{ url_for('get_posts') }}" class="form-control btn btn-lg btn-danger mt-3">Cancel Changes</a>
                 </div>
             </form>
         </div>
