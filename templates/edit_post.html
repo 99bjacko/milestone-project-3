@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12 col-lg-8 offset-lg-2 mt-5">
+            <form class="card" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Edit Post</h1>
+                    <label for="post_title" class="form-label">Post Title</label>
+                    <input type="text" id="post_title" name="post_title" minlength="5" maxlength="30"
+                        class="form-control" required>
+                    <label id="category_name">Category</label>
+                    <select id="category_name" name="category_name" class="form-select form-control mt-2" aria-label="Category Selection Dropdown" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="artist_name" class="form-label">Artist Name</label>
+                    <input type="text" id="artist_name" name="artist_name" minlength="2" maxlength="30"
+                        class="form-control" required>
+                    <label for="venue" class="form-label">Venue</label>
+                    <input type="text" id="venue" name="venue" minlength="5" maxlength="50"
+                        class="form-control" required>
+                    <label for="concert_date" class="form-label">Concert Date</label>
+                    <input type="date" name="concert_date" id="concert_date" class="form-control" max="2024-08-23" required>
+                    <label for="favourite_song" class="form-label">Favourite Song</label>
+                    <input type="text" id="favourite_song" name="favourite_song" minlength="2" maxlength="30"
+                        class="form-control" required>
+                    <label for="post_description" class="form-label">Post Description</label>
+                    <textarea id="post_description" name="post_description" minlength="5" maxlength="350"
+                        class="form-control" required></textarea>
+                    <button type="submit" class="form-control btn btn-lg btn-primary mt-3">Edit Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
