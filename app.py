@@ -122,12 +122,19 @@ def edit_post(post_id):
             "created_by": session["user"]
         }}
         mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit_post)
-        flash("Post Successfully Edited")
+        flash("Post Edited Successfully")
         return redirect(url_for("get_posts"))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
+
+
+@app.route("/delete_post/<post_id>")
+def delete_post(post_id):
+    mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
+    flash("Post Deleted Successfully")
+    return redirect(url_for("get_posts"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
