@@ -18,6 +18,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+def check_administrator(current_user):
+    is_administrator = mongo.db.users.find_one({"username": current_user})
+    return is_administrator["administrator"]
+
+
 @app.route("/")
 @app.route("/get_posts")
 def get_posts():
@@ -38,7 +43,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "administrator": "no"
         }
         mongo.db.users.insert_one(register)
 
@@ -65,6 +71,8 @@ def login():
                 if session["user"]:
                     flash("Welcome, {}".format(
                         request.form.get("username")))
+                    if check_administrator(request.form.get("username").lower()) == "yes":
+                        session["admin"] = "yes"
                     return redirect(url_for("get_posts"))
             else:
                 # password does not match
@@ -139,21 +147,30 @@ def delete_post(post_id):
 
 @app.route("/get_categories")
 def get_categories():
+    admin = ""
+    current_user = session.get('user')
+    if current_user:
+        admin = check_administrator(current_user)
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
+    return render_template("categories.html", categories=categories, admin=admin)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("Category Added Successfully")
-        return redirect(url_for("get_categories"))
-
-    return render_template("add_category.html")
+    current_user = session.get('user')
+    if current_user:
+        admin = check_administrator(current_user)
+        if admin == "yes":
+            if request.method == "POST":
+                category = {
+                    "category_name": request.form.get("category_name")
+                }
+                mongo.db.categories.insert_one(category)
+                flash("Category Added Successfully")
+                return redirect(url_for("get_categories"))
+            return render_template("add_category.html")
+        return redirect(url_for("get_posts"))
+    return redirect(url_for("login"))
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])

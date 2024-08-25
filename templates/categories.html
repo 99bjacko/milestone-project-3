@@ -2,11 +2,13 @@
 {% block content %}
 
     <h1 class="text-center mt-5">All Categories</h1>
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <a href="{{ url_for('add_category') }}" class="btn btn-lg btn-info mt-3">Add Category</a>
+    {% if admin == "yes" %}
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <a href="{{ url_for('add_category') }}" class="btn btn-lg btn-info mt-3">Add Category</a>
+            </div>
         </div>
-    </div>
+    {% endif %}
     
 
     <div class="row">
@@ -18,14 +20,16 @@
                         <div class="row">
                             <a href="#" class="btn btn-primary mt-3">View Category</a>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-sm btn-secondary mt-3">Edit</a>
+                        {% if admin == "yes" %}
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-sm btn-secondary mt-3">Edit</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn btn-sm btn-danger mt-3">Delete</a>  
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn btn-sm btn-danger mt-3">Delete</a>  
-                            </div>
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
