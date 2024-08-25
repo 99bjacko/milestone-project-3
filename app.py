@@ -110,6 +110,21 @@ def add_post():
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
+    if request.method == "POST":
+        submit_post = { "$set": {
+            "post_title": request.form.get("post_title"),
+            "category_name": request.form.get("category_name"),
+            "artist_name": request.form.get("artist_name"),
+            "venue": request.form.get("venue"),
+            "concert_date": request.form.get("concert_date"),
+            "favourite_song": request.form.get("favourite_song"),
+            "post_description": request.form.get("post_description"),
+            "created_by": session["user"]
+        }}
+        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit_post)
+        flash("Post Successfully Edited")
+        return redirect(url_for("get_posts"))
+
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
