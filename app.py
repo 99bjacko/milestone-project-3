@@ -195,9 +195,15 @@ def edit_category(category_id):
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
-    flash("Category Deleted Successfully")
-    return redirect(url_for("get_categories"))
+    current_user = session.get('user')
+    if current_user:
+        admin = check_administrator(current_user)
+        if admin == "yes":
+            mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
+            flash("Category Deleted Successfully")
+            return redirect(url_for("get_categories"))
+        return redirect(url_for("get_posts"))
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
