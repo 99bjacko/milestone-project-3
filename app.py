@@ -26,14 +26,22 @@ def check_administrator(current_user):
 @app.route("/")
 @app.route("/index")
 def index():
+    admin = ""
+    current_user = session.get('user')
+    if current_user:
+        admin = check_administrator(current_user)
     posts = list(mongo.db.posts.find({}).sort("_id", -1).limit(2))
-    return render_template("index.html", posts=posts)
+    return render_template("index.html", posts=posts, admin=admin)
 
 
 @app.route("/get_posts")
 def get_posts():
+    admin = ""
+    current_user = session.get('user')
+    if current_user:
+        admin = check_administrator(current_user)
     posts = list(mongo.db.posts.find())
-    return render_template("posts.html", posts=posts)
+    return render_template("posts.html", posts=posts, admin=admin)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -240,4 +248,4 @@ def not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
