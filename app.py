@@ -110,7 +110,8 @@ def add_post():
             "concert_date": request.form.get("concert_date"),
             "favourite_song": request.form.get("favourite_song"),
             "post_description": request.form.get("post_description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "post_image": request.form.get("post_image")
         }
         mongo.db.posts.insert_one(post)
         flash("Post Successfully Added")
@@ -131,7 +132,8 @@ def edit_post(post_id):
             "concert_date": request.form.get("concert_date"),
             "favourite_song": request.form.get("favourite_song"),
             "post_description": request.form.get("post_description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "post_image": request.form.get("post_image")
         }}
         mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit_post)
         flash("Post Edited Successfully")
