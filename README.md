@@ -106,23 +106,23 @@ The typography for this project was picked using Google Fonts.
 - The navigation bar satisfies the first user story as it is easy and intuitive.
 - The navigation bar satisfies the second user story as it is responsive on a number of different devices and it is visually appealing.
 
-![Navbar Logged Out]()
+![Navbar Logged Out](./static/images/documentation/navbar_logged_out_screenshot.png)
     
-![Navbar Logged In]()
+![Navbar Logged In](./static/images/documentation/navbar_logged_in_screenshot.png)
 
 #### Logo
 
 - The Navbar also contains the main brand logo, which is also a form of navigation, acting as a home button.
 
-![Logo]()
+![Logo](./static/images/documentation/logo_screenshot.png)
 
 #### Home Page
 
-![Home Page Logged Out]()
+![Home Page Logged Out](./static/images/documentation/home_page_logged_out_screenshot.png)
 
-![Home Page Logged In]()
+![Home Page Logged In](./static/images/documentation/home_page_logged_in_screenshot.png)
 
-![Home Page Logged In Admin]()
+![Home Page Logged In Admin](./static/images/documentation/home_page_logged_in_admin_screenshot.png)
 
 - The Home Page features two main sections:
     - The first section is a card displaying the main brand image along with a comment, introducing users to the concept of the website.
@@ -135,45 +135,45 @@ The typography for this project was picked using Google Fonts.
 
 #### Categories Page
 
-![Categories Page]()
+![Categories Page](./static/images/documentation/categories_page_screenshot.png)
 
-![Categories Page Admin]()
+![Categories Page Admin](./static/images/documentation/categories_page_logged_in_admin_screenshot.png)
 
 #### Add Category Page
 
-![Add Category Page]()
+![Add Category Page](./static/images/documentation/add_category_page_screenshot.png)
 
 #### Edit Category Page
 
-![Edit Category Page]()
+![Edit Category Page](./static/images/documentation/edit_category_page_screenshot.png)
 
 #### All Posts Page
 
-![All Posts Page Logged Out]()
+![All Posts Page Logged Out](./static/images/documentation/all_posts_page_logged_out_screenshot.png)
 
-![All Posts Page Logged In]()
+![All Posts Page Logged In](./static/images/documentation/all_posts_page_logged_in_screenshot.png)
 
-![All Posts Page Logged In Admin]()
+![All Posts Page Logged In Admin](./static/images/documentation/all_posts_page_logged_in_admin_screenshot.png)
 
 #### Registration Page
 
-![Registration Page]()
+![Registration Page](./static/images/documentation/registration_page_screenshot.png)
 
 #### Log In Page
 
-![Log In Page]()
+![Log In Page](./static/images/documentation/login_page_screenshot.png)
 
 #### Log Out Function
 
-![Log Out Link]()
+![Log Out Link](./static/images/documentation/logout_link_screenshot.png)
 
 #### Add Post Page
 
-![Add Post Page]()
+![Add Post Page](./static/images/documentation/add_post_page_screenshot.png)
 
 #### Edit Post Page
 
-![Edit Post Page]()
+![Edit Post Page](./static/images/documentation/edit_post_page_screenshot.png)
 
 ### Future Features
 
