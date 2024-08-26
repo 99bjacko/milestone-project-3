@@ -9,10 +9,10 @@
             <div class="card">
                 <img src="..." class="card-img-top" alt="Gig Image">
                 <div class="card-body text-center">
-                    <h4 class="card-title">{{ post.post_name }}</h4>
+                    <h4 class="card-title">{{ post.post_title }}</h4>
                     <p class="card-text">{{ post.post_description }}</p>
                     <p class="card-text">by: {{ post.created_by }}</p>
-                    <a href="#" class="btn btn-primary">View Post</a>
+                    <a href="{{ url_for('display_post', post_id=post._id)}}" class="btn btn-primary">View Post</a>
                     {% if session.user|lower == post.created_by|lower %}
                         <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-secondary">Edit</a>     
                         <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn btn-danger">Delete</a>

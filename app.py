@@ -71,8 +71,6 @@ def login():
                 if session["user"]:
                     flash("Welcome, {}".format(
                         request.form.get("username")))
-                    if check_administrator(request.form.get("username").lower()) == "yes":
-                        session["admin"] = "yes"
                     return redirect(url_for("get_posts"))
             else:
                 # password does not match
@@ -143,6 +141,12 @@ def delete_post(post_id):
     mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
     flash("Post Deleted Successfully")
     return redirect(url_for("get_posts"))
+
+
+@app.route("/display_post/<post_id>")
+def display_post(post_id):
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    return render_template("display_post.html", post=post)
 
 
 @app.route("/get_categories")

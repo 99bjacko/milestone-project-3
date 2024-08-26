@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 class="text-center mt-5">{{ post.post_title }}</h1>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <img src="..." class="card-img-top" alt="Gig Image">
+            <h3>{{ post.category_name }}</h3>
+            <h3>{{ post.artist_name }}</h3>
+            <h3>{{ post.venue }}</h3>
+            <h3>{{ post.concert_date }}</h3>
+            <h3>{{ post.favourite_song }}</h3>
+            <p>{{ post.post_description }}</p>
+        </div>
+    </div>
+
+{% endblock %}
