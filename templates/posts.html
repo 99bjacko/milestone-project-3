@@ -5,6 +5,13 @@
         <h1 class="text-center mt-5 mb-5">{{ category_name }}</h1>
     {% else %}
         <h1 class="text-center mt-5 mb-5">All Posts</h1>
+        {% if session.user %}
+            <div class="row">
+                <div class="col-sm-12 text-center mb-5">
+                    <a href="{{ url_for('add_post') }}" class="btn btn-lg btn-info">Add Post</a>
+                </div>
+            </div>
+        {% endif %}
     {% endif %}
 
     {% if posts|length > 0 %}

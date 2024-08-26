@@ -7,6 +7,13 @@
                 <div class="card-body text-center">
                     <h1 class="card-title index-title mt-5 mb-5">Concert Connect</h2>
                     <p class="card-text mb-5">Share your experiences with fellow gig-goers</p>
+                    {% if session.user %}
+                        <div class="row">
+                            <div class="col-sm-12 text-center mb-5">
+                                <a href="{{ url_for('add_post') }}" class="btn btn-lg btn-info mt-3">Add Post</a>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
