@@ -59,7 +59,8 @@ def register():
 
             register = {
                 "username": request.form.get("username").lower(),
-                "password": generate_password_hash(request.form.get("password")),
+                "password": generate_password_hash(
+                    request.form.get("password")),
                 "administrator": "no"
             }
             mongo.db.users.insert_one(register)
@@ -84,7 +85,8 @@ def login():
             if existing_user:
                 # check if hashed password is equal to inputted password
                 if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
+                        existing_user["password"], request.form.get(
+                            "password")):
                     session["user"] = request.form.get("username").lower()
                     if session["user"]:
                         flash("Welcome, {}".format(
@@ -141,7 +143,7 @@ def edit_post(post_id):
     current_user = session.get('user')
     if current_user:
         if request.method == "POST":
-            submit_post = { "$set": {
+            submit_post = {"$set": {
                 "post_title": request.form.get("post_title"),
                 "category_name": request.form.get("category_name"),
                 "artist_name": request.form.get("artist_name"),
@@ -158,7 +160,8 @@ def edit_post(post_id):
 
         post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
         categories = mongo.db.categories.find().sort("category_name", 1)
-        return render_template("edit_post.html", post=post, categories=categories)
+        return render_template(
+            "edit_post.html", post=post, categories=categories)
     return redirect(url_for('login'))
 
 
@@ -211,7 +214,7 @@ def edit_category(category_id):
         admin = check_administrator(current_user)
         if admin == "yes":
             if request.method == "POST":
-                submit_category = { "$set": {
+                submit_category = {"$set": {
                     "category_name": request.form.get("category_name")
                 }}
                 mongo.db.categories.update_one(
@@ -254,6 +257,7 @@ def missing_permissions():
 @app.errorhandler(404)
 def not_found(e):
     return render_template('404.html'), 404
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

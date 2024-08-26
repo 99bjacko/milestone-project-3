@@ -386,6 +386,44 @@ The user stories have been tested and evaluated as shown below:
 | As an administrator, I would like to be able to add new categories, which will become available to users adding new posts. | As an administrator, I can add new categories through the add category form accesseed through the button displayed on the categories page | PASS |
 | As an administrator, I would like to be able to edit or delete any post on the website, reducing the risk of bad actors. | As an administrator, I can easily edit existing posts using the edit post page accessed through the edit button on the post cards and delete posts through the delete button on the post cards | PASS |
 
+### Validation
+
+#### HTML Validation
+
+All pages were tested using the [W3C Nu HTML Checker](https://validator.w3.org/nu/) (previously W3C Markup Validation Service).
+
+When initially checking the website, the HTML checker highlighted two errors and a warning:
+- A section tag in the base template had the mt-3 class
+- 'End tag h2 seen, but there were open elements'
+    - This was due to a h1 tag having a h2 closing tag
+- No heading element in the section
+    - This was solved by changing the section to a div
+After correcting these issues, all pages pass the HTML validation checks.
+
+- [HTML Validation - Index](./static/images/documentation/html_validation_index.png)
+- [HTML Validation - Categories Page](./static/images/documentation/html_validation_categories.png)
+- [HTML Validation - View Posts by Category Page](./static/images/documentation/html_validation_view_posts_by_category.png)
+- [HTML Validation - Add Category Page](./static/images/documentation/html_validation_add_category.png)
+- [HTML Validation - Edit Category Page](./static/images/documentation/html_validation_edit_category.png)
+- [HTML Validation - All Posts Page](./static/images/documentation/html_validation_all_posts.png)
+- [HTML Validation - View Post Page](./static/images/documentation/html_validation_view_post.png)
+- [HTML Validation - Registration](./static/images/documentation/html_validation_registration.png)
+- [HTML Validation - Log In](./static/images/documentation/html_validation_login.png)
+- [HTML Validation - Add Post](./static/images/documentation/html_validation_add_post.png)
+- [HTML Validation - Edit Post](./static/images/documentation/html_validation_edit_post.png)
+
+#### CSS Validation
+
+The custom CSS stylesheet style.css was checked using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and no errors were found.
+
+![CSS Validation](./static/images/documentation/css_validation.png)
+
+#### Python Validation
+
+The app.py Python code was checked using the CI Python Linter. There were a few lines that were too long, which were corrected. The code now passes through the linter and is PEP8 compliant.
+
+![Python Validation](./static/images/documentation/python_validation.png)
+
 ### Lighthouse Testing
 
 For this project, I tested the performance, accessibility, best practices and SEO of the website using Lighthouse, one of the Chrome Developer Tools.
