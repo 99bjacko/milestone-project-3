@@ -13,18 +13,58 @@
                     <div class="col-sm-6 mt-3">
                         <div class="card-body text-start">
                             <h2 class="card-text">Category:</h2>
-                            <h2 class="card-text">Artist:</h2>
-                            <h2 class="card-text">Venue:</h2>
-                            <h2 class="card-text">Date of Concert:</h2>
-                            <h2 class="card-text">Favourite Song:</h2>
                         </div>
                     </div>
                     <div class="col-sm-6 mt-3">
                         <div class="card-body text-end">
                             <h2 class="card-text">{{ post.category_name }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-start">
+                            <h2 class="card-text">Artist</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-end">
                             <h2 class="card-text">{{ post.artist_name }}</h2>
-                            <h2 class="card-text">{{ post.venue}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-start">
+                            <h2 class="card-text">Venue</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-end">
+                            <h2 class="card-text">{{ post.venue }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-start">
+                            <h2 class="card-text">Date of Concert:</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-end">
                             <h2 class="card-text">{{ post.concert_date }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-start">
+                            <h2 class="card-text">Favourite Song:</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mt-1">
+                        <div class="card-body text-end">
                             <h2 class="card-text">{{ post.favourite_song }}</h2>
                         </div>
                     </div>
