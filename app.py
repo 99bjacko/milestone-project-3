@@ -24,6 +24,12 @@ def check_administrator(current_user):
 
 
 @app.route("/")
+@app.route("/index")
+def index():
+    posts = list(mongo.db.posts.find({}).sort("_id", -1).limit(2))
+    return render_template("index.html", posts=posts)
+
+
 @app.route("/get_posts")
 def get_posts():
     posts = list(mongo.db.posts.find())
