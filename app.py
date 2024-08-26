@@ -223,6 +223,11 @@ def get_posts_by_category(category_name):
     posts = list(mongo.db.posts.find({"category_name": category_name}))
     return render_template("posts.html", posts=posts, category_name=category_name)
 
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
