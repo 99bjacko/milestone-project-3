@@ -12,6 +12,10 @@ The GitHub Repository for this project can be found at this link: <https://githu
 
 ## Objective
 
+In this project, I intend to create an engaging and responsive website. The goal of this website is to illustrate my passion for going to concerts, and to allow other users to do the same thing by sharing their experiences. The main objective is to demonstrate my capabilities using HTML, CSS, Python, Flask and MongoDB, creating an enjoyable experience for users of the website.
+
+The target audience for this website is people who are similar to myself - people who love going to concerts and watching live music.
+
 ## UX
 
 ### User Stories

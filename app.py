@@ -164,7 +164,8 @@ def get_categories():
     if current_user:
         admin = check_administrator(current_user)
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories, admin=admin)
+    return render_template(
+        "categories.html", categories=categories, admin=admin)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
@@ -195,11 +196,13 @@ def edit_category(category_id):
                 submit_category = { "$set": {
                     "category_name": request.form.get("category_name")
                 }}
-                mongo.db.categories.update_one({"_id": ObjectId(category_id)}, submit_category)
+                mongo.db.categories.update_one(
+                    {"_id": ObjectId(category_id)}, submit_category)
                 flash("Category Edited Successfully")
                 return redirect(url_for("get_categories"))
 
-            category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+            category = mongo.db.categories.find_one(
+                {"_id": ObjectId(category_id)})
             return render_template("edit_category.html", category=category)
         return redirect(url_for("missing_permissions"))
     return redirect(url_for("login"))
@@ -221,7 +224,8 @@ def delete_category(category_id):
 @app.route("/get_posts_by_category/<category_name>")
 def get_posts_by_category(category_name):
     posts = list(mongo.db.posts.find({"category_name": category_name}))
-    return render_template("posts.html", posts=posts, category_name=category_name)
+    return render_template(
+        "posts.html", posts=posts, category_name=category_name)
 
 
 @app.route("/missing_permissions")
@@ -236,4 +240,4 @@ def not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
