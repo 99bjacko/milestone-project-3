@@ -46,57 +46,61 @@ def get_posts():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "POST":
-        # check if username exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+    current_user = session.get('user')
+    if not current_user:
+        if request.method == "POST":
+            # check if username exists in database
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("register"))
+            if existing_user:
+                flash("Username already exists")
+                return redirect(url_for("register"))
 
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "administrator": "no"
-        }
-        mongo.db.users.insert_one(register)
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password")),
+                "administrator": "no"
+            }
+            mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("get_posts"))
-
-    return render_template("register.html")
+            # put the new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Registration Successful!")
+            return redirect(url_for("get_posts"))
+        return render_template("register.html")
+    return redirect(url_for("index"))
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        # check if username exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+    current_user = session.get('user')
+    if not current_user:
+        if request.method == "POST":
+            # check if username exists in database
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
-        if existing_user:
-            # check if hashed password is equal to inputted password
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                if session["user"]:
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for("index"))
+            if existing_user:
+                # check if hashed password is equal to inputted password
+                if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    if session["user"]:
+                        flash("Welcome, {}".format(
+                            request.form.get("username")))
+                        return redirect(url_for("index"))
+                else:
+                    # password does not match
+                    flash("Incorrect Username or Password")
+                    return redirect(url_for("login"))
+
             else:
-                # password does not match
+                # username does not exist in database
                 flash("Incorrect Username or Password")
                 return redirect(url_for("login"))
-
-        else:
-            # username does not exist in database
-            flash("Incorrect Username or Password")
-            return redirect(url_for("login"))
-
-    return render_template("login.html")
+        return render_template("login.html")
+    return redirect(url_for("index"))
 
 
 @app.route("/logout")
@@ -109,47 +113,53 @@ def logout():
 
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
-    if request.method == "POST":
-        post = {
-            "post_title": request.form.get("post_title"),
-            "category_name": request.form.get("category_name"),
-            "artist_name": request.form.get("artist_name"),
-            "venue": request.form.get("venue"),
-            "concert_date": request.form.get("concert_date"),
-            "favourite_song": request.form.get("favourite_song"),
-            "post_description": request.form.get("post_description"),
-            "created_by": session["user"],
-            "post_image": request.form.get("post_image")
-        }
-        mongo.db.posts.insert_one(post)
-        flash("Post Successfully Added")
-        return redirect(url_for("get_posts"))
+    current_user = session.get('user')
+    if current_user:
+        if request.method == "POST":
+            post = {
+                "post_title": request.form.get("post_title"),
+                "category_name": request.form.get("category_name"),
+                "artist_name": request.form.get("artist_name"),
+                "venue": request.form.get("venue"),
+                "concert_date": request.form.get("concert_date"),
+                "favourite_song": request.form.get("favourite_song"),
+                "post_description": request.form.get("post_description"),
+                "created_by": session["user"],
+                "post_image": request.form.get("post_image")
+            }
+            mongo.db.posts.insert_one(post)
+            flash("Post Successfully Added")
+            return redirect(url_for("get_posts"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_post.html", categories=categories)
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("add_post.html", categories=categories)
+    return redirect(url_for('login'))
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-    if request.method == "POST":
-        submit_post = { "$set": {
-            "post_title": request.form.get("post_title"),
-            "category_name": request.form.get("category_name"),
-            "artist_name": request.form.get("artist_name"),
-            "venue": request.form.get("venue"),
-            "concert_date": request.form.get("concert_date"),
-            "favourite_song": request.form.get("favourite_song"),
-            "post_description": request.form.get("post_description"),
-            "created_by": session["user"],
-            "post_image": request.form.get("post_image")
-        }}
-        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit_post)
-        flash("Post Edited Successfully")
-        return redirect(url_for("get_posts"))
+    current_user = session.get('user')
+    if current_user:
+        if request.method == "POST":
+            submit_post = { "$set": {
+                "post_title": request.form.get("post_title"),
+                "category_name": request.form.get("category_name"),
+                "artist_name": request.form.get("artist_name"),
+                "venue": request.form.get("venue"),
+                "concert_date": request.form.get("concert_date"),
+                "favourite_song": request.form.get("favourite_song"),
+                "post_description": request.form.get("post_description"),
+                "created_by": session["user"],
+                "post_image": request.form.get("post_image")
+            }}
+            mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit_post)
+            flash("Post Edited Successfully")
+            return redirect(url_for("get_posts"))
 
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_post.html", post=post, categories=categories)
+        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("edit_post.html", post=post, categories=categories)
+    return redirect(url_for('login'))
 
 
 @app.route("/delete_post/<post_id>")

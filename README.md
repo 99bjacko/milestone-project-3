@@ -106,9 +106,17 @@ The typography for this project was picked using Google Fonts.
 - The navigation bar satisfies the first user story as it is easy and intuitive.
 - The navigation bar satisfies the second user story as it is responsive on a number of different devices and it is visually appealing.
 
+##### Logged Out
+
 ![Navbar Logged Out](./static/images/documentation/navbar_logged_out_screenshot.png)
+
+##### Logged In
     
 ![Navbar Logged In](./static/images/documentation/navbar_logged_in_screenshot.png)
+
+##### Mobile
+
+![Navbar Mobile Screenshot](./static/images/documentation/navbar_collapsible_screenshot.png)
 
 #### Logo
 
@@ -118,9 +126,15 @@ The typography for this project was picked using Google Fonts.
 
 #### Home Page
 
+##### Logged Out
+
 ![Home Page Logged Out](./static/images/documentation/home_page_logged_out_screenshot.png)
 
+##### Logged In
+
 ![Home Page Logged In](./static/images/documentation/home_page_logged_in_screenshot.png)
+
+##### Administrator View
 
 ![Home Page Logged In Admin](./static/images/documentation/home_page_logged_in_admin_screenshot.png)
 
@@ -135,45 +149,153 @@ The typography for this project was picked using Google Fonts.
 
 #### Categories Page
 
+#### Logged Out / Logged in as a regular user
+
 ![Categories Page](./static/images/documentation/categories_page_screenshot.png)
 
+##### Administrator View
+
 ![Categories Page Admin](./static/images/documentation/categories_page_logged_in_admin_screenshot.png)
+
+- The Categories Page features categories separated onto individual cards.
+- Through this page, users can view posts under specific categories.
+- If an administrator is logged in, buttons for editing and deleting the categories will be displayed.
+- The Categories Page targets the fourth user story.
+
+#### View Posts By Category Page
+
+![View Posts By Category Page](./static/images/documentation/view_posts_by_category_page_screenshot.png)
+
+##### Page when there are no posts found with that category name
+
+![View Posts By Category Page When No Posts Are Found](./static/images/documentation/view_posts_by_category_page_no_posts_found_screenshot.png)
+
+- The View Posts By Category Page displays all of the posts in a specific category.
+- The category name is displayed as a heading.
+- If a user is logged in and one of the displayed posts was created by that specific user, buttons for editing and deleting that post will be displayed.
+- If the user logged in is an admin, buttons for editing and deleting the posts will be displayed.
+- If no posts are found, a message is displayed.
+- This page targets the third and fourth user stories.
 
 #### Add Category Page
 
 ![Add Category Page](./static/images/documentation/add_category_page_screenshot.png)
 
+- The Add Category Page is accessed through the Categories Page via a button, which is hidden to non-administrators.
+- The Add Category Page is only accessible by an administrator.
+- The page features a form with an input field and two buttons:
+    - The input field is for the category name.
+    - The add category button submits the category to the database.
+    - The cancel button redirects the user back to the categories page.
+- This page targets the fourteenth user story.
+
 #### Edit Category Page
 
 ![Edit Category Page](./static/images/documentation/edit_category_page_screenshot.png)
 
+- The Edit Category Page is accessed through the Categories Page via a button, which is hidden to non-administrators.
+- The Edit Category Page is only accessible by an administrator.
+- The page features a form with an input field and two buttons:
+    - The input field is for the category name and is filled by default with the current category name.
+    - The edit category button updates the category in the database.
+    - The cancel button redirects the user back to the categories page.
+- This page targets the thirteenth user story.
+
 #### All Posts Page
+
+##### Logged Out
 
 ![All Posts Page Logged Out](./static/images/documentation/all_posts_page_logged_out_screenshot.png)
 
+##### Logged In
+
 ![All Posts Page Logged In](./static/images/documentation/all_posts_page_logged_in_screenshot.png)
 
+##### Administrator View
+
 ![All Posts Page Logged In Admin](./static/images/documentation/all_posts_page_logged_in_admin_screenshot.png)
+
+- The All Posts Page can be accessed by all users
+- All posts are displayed on individual cards, with view post buttons which link to the individual posts.
+- If the user is logged in, a button for adding a post will be displayed underneath the heading.
+- If the user is logged in and one of the posts was created by that specific user, buttons for editing and deleting that post will be displayed.
+- If the user logged in is an admin, buttons for editing and deleting the posts will be displayed.
+- This page targets the third user story
+
+#### View Post Page
+
+##### Logged In as the same user that created the post or logged in as admin
+
+![View Post Page Logged In](./static/images/documentation/display_post_page_logged_in_screenshot.png)
+
+##### Logged Out or logged in as a user that didn't create the post
+
+![View Post Page Logged Out](./static/images/documentation/display_post_page_logged_out_screenshot.png)
+
+- The View Post Page can be accessed by all users via the "View Post" button displayed on the post cards.
+- The Page displays all the necessary information related to the post:
+    - The page heading is the post title.
+    - The image is displayed beneath the heading.
+    - The rest of the details are displayed on a card beneath the image.
+- If the user is logged in and created that specific post, or if the user logged in is an administrator, buttons for editing and deleting the post will be displayed.
+- This page targets the third user story.
 
 #### Registration Page
 
 ![Registration Page](./static/images/documentation/registration_page_screenshot.png)
 
+- The registration page is accessed through the navigation bar, the link only displays to users not logged in.
+- The page consists of a form with fields for username and password and a submit button to submit the data to the database.
+- The form checks if the username does not already exist and also validates the username and password to ensure requirements are met.
+- After registering successfully, the password is saved as a hashed password in the database.
+- After registering successfully, the user is automatically logged in.
+- After registering successfully, the user is redirected to the all posts page and a flash message is displayed, welcoming the user.
+- This page targets the sixth user story.
+
 #### Log In Page
 
 ![Log In Page](./static/images/documentation/login_page_screenshot.png)
+
+- The log in page is accessed through the navigation bar, the link only displays to users not logged in.
+- The page consists of a form with fields for username and password and a submit button.
+- Upon clicking the button, the username and password are checked against the data stored in the database.
+- After logging in successfully, the user is redirected to the home page and a flash message is displayed, welcoming the user.
+- This page targets the eighth user story.
 
 #### Log Out Function
 
 ![Log Out Link](./static/images/documentation/logout_link_screenshot.png)
 
+- The log out link is only displayed to logged in users in the navigation bar.
+- Upon clicking the link, the user is logged out.
+- This function targets the ninth user story.
+
 #### Add Post Page
 
 ![Add Post Page](./static/images/documentation/add_post_page_screenshot.png)
 
+- The Add Post page is either accessed through the buttons on the home and all posts pages or through the link in the navigation bar.
+    - The buttons and link in the navigation bar are only displayed to logged in users.
+- The page consists of a form with fields for all of the relevant data related to a post along with a submit button to submit the data to the database.
+- The form also contains a cancel button, which redirects the user to the all posts page.
+- This page targets the seventh user story.
+
 #### Edit Post Page
 
 ![Edit Post Page](./static/images/documentation/edit_post_page_screenshot.png)
+
+- The Edit Post page is accessed through the buttons displayed on a post card.
+    - These buttons are only displayed to the correct users and all administrators
+- The page consists of a form with the same fields and buttons as the Add Post page, the form has been filled in by default with the pre-existing data.
+- This page targets the tenth user story.
+
+#### Error 404 Page
+
+![Error 404 Page](./static/images/documentation/error_404_page_screenshot.png)
+
+#### Missing Permissions Page
+
+![Missing Permissions Page](./static/images/documentation/missing_permissions_page_screenshot.png)
 
 ### Future Features
 
@@ -197,6 +319,49 @@ The typography for this project was picked using Google Fonts.
 - [Am I Responsive?](https://ui.dev/amiresponsive): used to create an image depicting what the website looks like on different devices
 
 ## Database Structure
+
+For this project, I used MongoDB, a non-relational database architecture.
+
+My database is called concert_connect.
+
+It contains 3 collections:
+
+### categories
+
+This contains the details of the categories used in the website
+
+| Key | Type | Notes |
+| --- | ---- | ----- |
+| _id | ObjectId() | Automatically Generated |
+| category_name | String | |
+
+### posts
+
+This contains the information about the posts that users add to the website
+
+| Key | Type | Notes |
+| --- | ---- | ----- |
+| _id | ObjectId() | Automatically Generated |
+| category_name | String | Taken from categories collection |
+| artist_name | String | |
+| venue | String | |
+| concert_date | String | |
+| favourite_song | String | |
+| post_description | String | |
+| post_title | String | |
+| created_by | String | |
+| post_image | String | | 
+
+### users
+
+This contains the information about the users that have signed up to the website
+
+| Key | Type | Notes |
+| --- | ---- | ----- |
+| _id | ObjectId() | Automatically Generated |
+| username | String | |
+| password | String | Hashed Password |
+| administrator | String | yes for administrator, set to no by default when registering |
 
 ## Testing
 
