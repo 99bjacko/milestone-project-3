@@ -77,7 +77,20 @@ For initially designing the project, I utilised Balsamiq to produce wireframes. 
 
 #### Colour Scheme
 
+The colour scheme for this project involved a lot of trial and error. I was interested in potentially using a background image for the home page, but I did not have a clear vision on what it would have been, so I decided against it. I experimented with different colour combinations, using Coolors for inspiration.
+
+The colours used throughout this website are:
+- Navigation Bar: Red `#CC2936`
+- Cards: Grey `#333138`
+- Background: Black `#000103`
+- Buttons: Styled using Bootstrap's primary (blue), secondary (grey), info (turquoise), and danger (red) classes
+- Text: White `#fff`
+
 #### Typography
+
+The typography for this project was picked using Google Fonts.
+- Main Brand / Logo: Poetsen One
+- Other Text: IBM Plex Sans
 
 ## Features
 
@@ -89,9 +102,21 @@ For initially designing the project, I utilised Balsamiq to produce wireframes. 
 
 ## Technologies Used
 
-### Languages Used
-
-### Frameworks, Libraries, Programmes, and Tools Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) was used to create the website
+- [CSS3](https://en.wikipedia.org/wiki/CSS) was used to style the website
+- [JavaScript (through Bootstrap)](https://en.wikipedia.org/wiki/JavaScript) was used for the functionality of the website
+- [Python](https://www.python.org/) was used as the back-end programming language
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/) was used as the Python framework, along with [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) templating.
+- [Bootstrap 5.3.3](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was used to aid with responsive design and styling of the website
+- [Gitpod](https://gitpod.io/): used to create the site (IDE)
+- [Google Fonts](https://fonts.google.com/): used to import the fonts used for this website into the style.css file
+- [Google Developer Tools](https://developer.chrome.com/docs/devtools/): used for troubleshooting and testing
+- [Git](https://git-scm.com/): used for version control by utilising the Gitpod terminal to commit to Git and push to GitHub
+- [GitHub](https://github.com/): used to save and store the files for the project
+- [MongoDB](https://www.mongodb.com) was used for non-relational database management with Flask
+- [Heroku](https://www.heroku.com/) used for hosting the deployed back-end website
+- [Balsamiq](https://balsamiq.com/): used to create the wireframes during the design process
+- [Am I Responsive?](https://ui.dev/amiresponsive): used to create an image depicting what the website looks like on different devices
 
 ## Database Structure
 
