@@ -367,6 +367,33 @@ This contains the information about the users that have signed up to the website
 
 ### Lighthouse Testing
 
+For this project, I tested the performance, accessibility, best practices and SEO of the website using Lighthouse, one of the Chrome Developer Tools.
+
+When initially testing using Lighthouse, the index page had an SEO score of 90 which increased after missing description and keywords were added to the head of the base template.
+
+- [Lighthouse report for index page - desktop](./static/images/documentation/lighthouse_testing_index_desktop.pdf)
+- [Lighthouse report for index page - mobile](./static/images/documentation/lighthouse_testing_index_mobile.pdf)
+- [Lighthouse report for categories page - desktop](./static/images/documentation/lighthouse_testing_categories_desktop.pdf)
+- [Lighthouse report for categories page - mobile](./static/images/documentation/lighthouse_testing_categories_mobile.pdf)
+- [Lighthouse report for view posts by category page - desktop](./static/images/documentation/lighthouse_testing_view_posts_by_category_desktop.pdf)
+- [Lighthouse report for view posts by category page - mobile](./static/images/documentation/lighthouse_testing_view_posts_by_category_mobile.pdf)
+- [Lighthouse report for add category page - desktop](./static/images/documentation/lighthouse_testing_add_category_desktop.pdf)
+- [Lighthouse report for add category page - mobile](./static/images/documentation/lighthouse_testing_add_category_mobile.pdf)
+- [Lighthouse report for edit category page - desktop](./static/images/documentation/lighthouse_testing_edit_category_desktop.pdf)
+- [Lighthouse report for edit category page - mobile](./static/images/documentation/lighthouse_testing_edit_category_mobile.pdf)
+- [Lighthouse report for all posts page - desktop](./static/images/documentation/lighthouse_testing_all_posts_desktop.pdf)
+- [Lighthouse report for all posts page - mobile](./static/images/documentation/lighthouse_testing_all_posts_mobile.pdf)
+- [Lighthouse report for view post page - desktop](./static/images/documentation/lighthouse_testing_view_post_desktop.pdf)
+- [Lighthouse report for view post page - mobile](./static/images/documentation/lighthouse_testing_view_post_mobile.pdf)
+- [Lighthouse report for registration page - desktop](./static/images/documentation/lighthouse_testing_registration_desktop.pdf)
+- [Lighthouse report for registration page - mobile](./static/images/documentation/lighthouse_testing_registration_mobile.pdf)
+- [Lighthouse report for log in page - desktop](./static/images/documentation/lighthouse_testing_login_desktop.pdf)
+- [Lighthouse report for log in page - mobile](./static/images/documentation/lighthouse_testing_login_mobile.pdf)
+- [Lighthouse report for add post page - desktop](./static/images/documentation/lighthouse_testing_add_post_desktop.pdf)
+- [Lighthouse report for add post page - mobile](./static/images/documentation/lighthouse_testing_add_post_mobile.pdf)
+- [Lighthouse report for edit post page - desktop](./static/images/documentation/lighthouse_testing_edit_post_desktop.pdf)
+- [Lighthouse report for edit post page - mobile](./static/images/documentation/lighthouse_testing_edit_post_mobile.pdf)
+
 ### Manual Testing
 
 ## Deployment
