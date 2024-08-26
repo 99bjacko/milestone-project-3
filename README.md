@@ -20,6 +20,22 @@ The target audience for this website is people who are similar to myself - peopl
 
 ### User Stories
 
+- As a visitor to the website, I want the navigation between pages and/or areas to be easy and intuitive, not having toe rely on browser buttons.
+- As a visitor to the website, I want the website to be responsive on a number of different devices.
+- As a first time visitor to the website, I would like to easily view other users' posts.
+- As a first time visitor to the website, I would like to be able to view all posts in a specific category.
+- As a first time visitor to the website, I would like the home page to be visually appealing.
+- As a first time visitor to the website, I would like to easily register for my own account, allowing me to contribute to the website.
+- As a first time visitor to the website, I would like to add my own posts, allowing me to share my experience with other like-minded individuals.
+- As a returning visitor to the website, I would like to be able to log in easily.
+- As a returning visitor to the website, I would like to be able to log out easily.
+- As a returning visitor to the website, I would like to be able to edit my existing posts.
+- As a returning visitor to the website, I would like to be able to delete my existing posts.
+- As a returning visitor to the website, I would like to be able to view the most recent posts, allowing me to catch up on other people's activity.
+- As an administrator, I would like to be able to manage existing categories, including updating and deleting.
+- As an administrator, I would like to be able to add new categories, which will become available to users adding new posts.
+- As an administrator, I would like to be able to edit or delete any post on the website, reducing the risk of bad actors.
+
 ### Opportunities
 
 ### Initial Concept
