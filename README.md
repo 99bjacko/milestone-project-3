@@ -365,6 +365,29 @@ This contains the information about the users that have signed up to the website
 
 ## Testing
 
+### User Stories Testing
+
+The user stories have been tested and evaluated as shown below:
+| User Story | Evaluation | Result |
+| ---------- | ---------- | ------ |
+| As a visitor to the website, I want the navigation between pages and/or areas to be easy and intuitive, not having to rely on browser buttons. | As a visitor to this website, I can see that the navigation between pages and/or areas is easy and intuitive using the navigation links and buttons available | PASS |
+| As a visitor to the website, I want the website to be responsive on a number of different devices. | As a visitor to this website, I can see that the website is responsive on different devices as the website is appropriately structured and looks appealing on both my desktop and phone | PASS |
+| As a first time visitor to the website, I would like to easily view other users' posts. | As a visitor to this website, I can easily view other users' posts via the index, all posts and view posts by category pages | PASS |
+| As a first time visitor to the website, I would like to be able to view all posts in a specific category. | As a visitor to this website, I can view all posts in a specific category through the buttons on the categories page | PASS |
+| As a first time visitor to the website, I would like the home page to be visually appealing. | As a visitor to this website, I believe that the home page is visually appealing and maintains sufficient contrast throughout the entire site | PASS |
+| As a first time visitor to the website, I would like to easily register for my own account, allowing me to contribute to the website. | As a visitor to this website, I can easily register for my own account using the registration page | PASS |
+| As a first time visitor to the website, I would like to add my own posts, allowing me to share my experience with other like-minded individuals. | As a visitor to this website, I can easily add my own posts by using the add post page when logged in | PASS |
+| As a returning visitor to the website, I would like to be able to log in easily. | As a returning visitor to the website, I can easily log in using the log in page after previously registering | PASS |
+| As a returning visitor to the website, I would like to be able to log out easily. | As a visitor to this website, I can easily log out using the link in the navigation bar | PASS |
+| As a returning visitor to the website, I would like to be able to edit my existing posts. | As a visitor to this website, I can easily edit my existing posts using the edit post page accessed through the edit button on the relevant post cards | PASS |
+| As a returning visitor to the website, I would like to be able to delete my existing posts. | As a visitor to this website, I can easily delete my existing posts using the delete button on the relevant post cards | PASS |
+| As a returning visitor to the website, I would like to be able to view the most recent posts, allowing me to catch up on other people's activity. | As a returning visitor to this website, I can easily view the most recent posts as show on the index page | PASS |
+| As an administrator, I would like to be able to manage existing categories, including updating and deleting. | As an administrator, I can update and delete categories through the buttons displayed on the category cards on the categories page | PASS |
+| As an administrator, I would like to be able to add new categories, which will become available to users adding new posts. | As an administrator, I can add new categories through the add category form accesseed through the button displayed on the categories page | PASS |
+| As an administrator, I would like to be able to edit or delete any post on the website, reducing the risk of bad actors. | As an administrator, I can easily edit existing posts using the edit post page accessed through the edit button on the post cards and delete posts through the delete button on the post cards | PASS |
+
+
+
 ### Lighthouse Testing
 
 For this project, I tested the performance, accessibility, best practices and SEO of the website using Lighthouse, one of the Chrome Developer Tools.
