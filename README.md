@@ -58,7 +58,22 @@ Derived from user stories
 
 ### Initial Concept
 
+The concept for this website was very much functionality first, focusing on a good, functional user experience, whilst keeping the design visually appealing but simplistic, maintaining appropriate contrast throughout the website. The design should be kept distraction-free, focusing on the content created by the users, rather than the website itself. 
+
 #### Wireframes
+
+For initially designing the project, I utilised Balsamiq to produce wireframes. This step allows for planning layouts and page structures, allowing to focus more on the website looking like the designs, instead of trying to simultaneously code and design.
+
+- [Home Page Wireframe](./static/images/documentation/home_page_wireframe.png)
+- [Home Page Logged In Wireframe](./static/images/documentation/home_page_logged_in_wireframe.png)
+- [Registration Page Wireframe](./static/images/documentation/registration_page_wireframe.png)
+- [Login Page Wireframe](./static/images/documentation/login_page_wireframe.png)
+- [All Posts Page Wireframe](./static/images/documentation/all_posts_page_wireframe.png)
+- [Post Page Wireframe](./static/images/documentation/post_page_wireframe.png)
+- [Add Post Page Wireframe](./static/images/documentation/add_post_page_wireframe.png)
+- [Categories Page Wireframe](./static/images/documentation/categories_page_wireframe.png)
+- [Categories Page Administrator View Wireframe](./static/images/documentation/categories_page_administrator_wireframe.png)
+- [Add Category Page Wireframe](./static/images/documentation/add_category_page_wireframe.png)
 
 #### Colour Scheme
 
