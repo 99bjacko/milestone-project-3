@@ -10,7 +10,7 @@
             {% endif %}
             <div class="card mt-5 mb-5">
                 <div class="row">
-                    <div class="col-sm-6 mt-2">
+                    <div class="col-sm-6 mt-3">
                         <div class="card-body text-start">
                             <h4 class="card-text">Category:</h4>
                             <h4 class="card-text">Artist:</h4>
@@ -19,7 +19,7 @@
                             <h4 class="card-text">Favourite Song:</h4>
                         </div>
                     </div>
-                    <div class="col-sm-6 mt-2">
+                    <div class="col-sm-6 mt-3">
                         <div class="card-body text-end">
                             <h4 class="card-text">{{ post.category_name }}</h4>
                             <h4 class="card-text">{{ post.artist_name }}</h4>
@@ -30,8 +30,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 mt-2 mb-5 text-center">
-                        <p class="card-text">Description:</p>
+                    <div class="col-sm-12 mt-3 mb-5 text-center">
+                        <h5 class="card-text"><u>Description</u></h5>
                         <p class="card-text">{{ post.post_description }}</p>
                         <p class="card-text">by: {{ post.created_by }}</p>
                         {% if session.user|lower == post.created_by|lower %}

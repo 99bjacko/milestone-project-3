@@ -77,7 +77,7 @@ def login():
                 if session["user"]:
                     flash("Welcome, {}".format(
                         request.form.get("username")))
-                    return redirect(url_for("get_posts"))
+                    return redirect(url_for("index"))
             else:
                 # password does not match
                 flash("Incorrect Username or Password")
