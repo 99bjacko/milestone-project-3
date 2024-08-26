@@ -386,8 +386,6 @@ The user stories have been tested and evaluated as shown below:
 | As an administrator, I would like to be able to add new categories, which will become available to users adding new posts. | As an administrator, I can add new categories through the add category form accesseed through the button displayed on the categories page | PASS |
 | As an administrator, I would like to be able to edit or delete any post on the website, reducing the risk of bad actors. | As an administrator, I can easily edit existing posts using the edit post page accessed through the edit button on the post cards and delete posts through the delete button on the post cards | PASS |
 
-
-
 ### Lighthouse Testing
 
 For this project, I tested the performance, accessibility, best practices and SEO of the website using Lighthouse, one of the Chrome Developer Tools.

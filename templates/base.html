@@ -67,9 +67,9 @@
         </nav>
     </header>
 
-    <section mt-3>
+    <div>
         <!-- displays flash messages -->
-         {% with messages = get_flashed_messages()%}
+        {% with messages = get_flashed_messages()%}
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashmsg">
@@ -77,8 +77,8 @@
                     </div>
                 {% endfor %}
             {% endif %}
-         {% endwith %}
-    </section>
+        {% endwith %}
+    </div>
 
     <main class="container">
         {% block content %}
