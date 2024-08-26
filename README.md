@@ -299,6 +299,13 @@ The typography for this project was picked using Google Fonts.
 
 ### Future Features
 
+If I had more time to work on this project, some features I would like to look at are:
+
+- Changing the formats of dates shown on the view post pages
+- Allowing users to add comments to posts, including their own and other users' posts
+- Allowing users to add multiple images to posts
+- Improved image integration
+
 ## Technologies Used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) was used to create the website
