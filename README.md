@@ -1,6 +1,6 @@
 # Milestone Project 3 - Concert Connect
 
-Responsive Image Goes Here
+![Responsive Website Mockup](./static/images/documentation/responsive_image.png)
 
 ## Live Site
 
