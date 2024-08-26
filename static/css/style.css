@@ -40,4 +40,8 @@ body {
     .navbar-brand {
         font-size: 125%;
     }
+
+    .display-post-text {
+        font-size: 18px;
+    }
 }

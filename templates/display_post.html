@@ -12,68 +12,68 @@
                 <div class="row">
                     <div class="col-6 mt-3">
                         <div class="card-body text-start">
-                            <h2 class="card-text">Category:</h2>
+                            <h2 class="display-post-text card-text">Category:</h2>
                         </div>
                     </div>
                     <div class="col-6 mt-3">
                         <div class="card-body text-end">
-                            <h2 class="card-text">{{ post.category_name }}</h2>
+                            <h2 class="display-post-text card-text">{{ post.category_name }}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 mt-1">
                         <div class="card-body text-start">
-                            <h2 class="card-text">Artist:</h2>
+                            <h2 class="display-post-text card-text">Artist:</h2>
                         </div>
                     </div>
                     <div class="col-6 mt-1">
                         <div class="card-body text-end">
-                            <h2 class="card-text">{{ post.artist_name }}</h2>
+                            <h2 class="display-post-text card-text">{{ post.artist_name }}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 mt-1">
                         <div class="card-body text-start">
-                            <h2 class="card-text">Venue:</h2>
+                            <h2 class="display-post-text card-text">Venue:</h2>
                         </div>
                     </div>
                     <div class="col-6 mt-1">
                         <div class="card-body text-end">
-                            <h2 class="card-text">{{ post.venue }}</h2>
+                            <h2 class="display-post-text card-text">{{ post.venue }}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 mt-1">
                         <div class="card-body text-start">
-                            <h2 class="card-text">Date of Concert:</h2>
+                            <h2 class="display-post-text card-text">Date of Concert:</h2>
                         </div>
                     </div>
                     <div class="col-6 mt-1">
                         <div class="card-body text-end">
-                            <h2 class="card-text">{{ post.concert_date }}</h2>
+                            <h2 class="display-post-text card-text">{{ post.concert_date }}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 mt-1">
                         <div class="card-body text-start">
-                            <h2 class="card-text">Favourite Song:</h2>
+                            <h2 class="display-post-text card-text">Favourite Song:</h2>
                         </div>
                     </div>
                     <div class="col-6 mt-1">
                         <div class="card-body text-end">
-                            <h2 class="card-text">{{ post.favourite_song }}</h2>
+                            <h2 class="display-post-text card-text">{{ post.favourite_song }}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-10 offset-1 mt-3 mb-5 text-center">
-                        <h3 class="card-text"><u>Description</u></h3>
-                        <p class="card-text">{{ post.post_description }}</p>
-                        <p class="card-text">by: {{ post.created_by }}</p>
+                        <h3 class="display-post-text card-text"><u>Description</u></h3>
+                        <p class="display-post-text card-text">{{ post.post_description }}</p>
+                        <p class="display-post-text card-text">by: {{ post.created_by }}</p>
                         {% if session.user|lower == post.created_by|lower %}
                             <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-secondary">Edit</a>     
                             <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn btn-danger">Delete</a>
