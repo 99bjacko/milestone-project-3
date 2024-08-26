@@ -386,6 +386,48 @@ The user stories have been tested and evaluated as shown below:
 | As an administrator, I would like to be able to add new categories, which will become available to users adding new posts. | As an administrator, I can add new categories through the add category form accesseed through the button displayed on the categories page | PASS |
 | As an administrator, I would like to be able to edit or delete any post on the website, reducing the risk of bad actors. | As an administrator, I can easily edit existing posts using the edit post page accessed through the edit button on the post cards and delete posts through the delete button on the post cards | PASS |
 
+### Manual Testing
+
+The following tests were carried out for various aspects of the website using a Windows desktop using Firefox and Chrome and an iPhone 15 Pro Max using Safari.
+
+| Feature | Expected Outcome | Testing Performed | Result |
+| ------- | ---------------- | ----------------- | ------ |
+| Brand Text Link | Link directs user back to index page | Clicked brand text | PASS |
+| Navbar Links | Links direct user to the relevant page / function | Clicked all navbar links | PASS |
+| Navbar Links | When logged out, the add post and log out links are hidden and the log in and register links are displayed | Logged out to reveal navbar link changes | PASS |
+| Navbar Links | When logged in, the add post and log out links are displayed and the log in and register links are hidden | Logged in to reveal navbar link changes | PASS |
+| Navbar Links | When displayed on a small screen, the navbar collapses into a hamburger menu | Viewed website on phone and resized website on desktop | PASS |
+| Categories Page | When clicking the 'View Category' button, a list of posts in the category are displayed or a no posts found message is displayed | Clicked 'View Category' on a category that had existing posts. Clicked 'View Category' on a category that did not have existing posts | PASS |
+| Categories Page | When an administrator is logged in, an add category button is displayed underneath the page heading and edit and delete buttons are displayed on the category cards | Logged in as an administrator | PASS |
+| Categories Page | When an administrator clicks on the add category button, the add category page is displayed | Logged in as an administrator and clicked on the add category button | PASS |
+| Categories Page | When an administrator clicks on the edit button on a category card, the edit category page is displayed | Logged in as an administrator and clicked on the edit button on a category card | PASS |  
+| Categories Page | When an administrator clicks on the delete button on a category card, the category is deleted from the database and is no longer displayed | Logged in as an administrator and clicked on the delete button on a category card | PASS |
+| Add Category Page | When an administrator tries to submit a blank form, the administrator is prompted to fill in the category name field | Logged in as an administrator and tried to submit a blank form | PASS |
+| Add Category page | When an administrator completes and submits the form, the category is added to the database and is displayed on the categories page | Logged in as an administrator and submitted a correct form | PASS |
+| Add Category Page | The cancel button redirects the administrator back to the categories page | Logged in as an administrator and clicked the cancel button | PASS |
+| Edit Category Page | When an administrator tries to submit a blank form, the administrator is prompted to fill in the category name field | Logged in as an administrator and tried to submit a blank form | PASS |
+| Edit Category Page | When an administrator completes and submits the form, the category is updated in the database and the new name is displayed on the categories page | Logged in as an administrator and submitted a correct form | PASS |
+| Edit Category Page | The cancel button redirects the administrator back to the categories page | Logged in as an administrator and clicked the cancel button | PASS |
+| All Posts Page | All posts in the database are shown on the page | Compared website posts to database | PASS |
+| All Posts Page | When clicking the "View Post" button, the user is redirected to the page of that specific post | Clicked "View Post" button | PASS |
+| All Posts Page | When logged in, the add post button is displayed and edit and delete buttons should be displayed on the post cards relevant to that user | Logged in as a non-admin user that has posted before | PASS |
+| All Posts Page | When logged in as an administrator, edit and delete buttons should be displayed for all posts | Logged in as an administrator | PASS |
+| All Posts Page | When logged in as an appropriate user or administrator, clicking on the edit button should redirect the user to the edit post page | Logged in as a non-admin user and an admin user and clicked on the edit button for the same post | PASS |
+| All Posts Page | When logged in as an appropriate user or administrator, clicking on the delete button should delete that specific post | Logged in as a non-admin user and an admin user and clicked on the delete button for two separate posts | PASS |
+| Add Post Page | When trying to submit the form with invalid data, the user is prompted to make changes and fill the form out correctly | Attempted to submit a form with invalid data | PASS |
+| Add Post Page | When submitting the form with valid data, the post is added to the database and displayed on the all posts page | Submitted a form with valid data | PASS |
+| Edit Post Page | When trying to submit the form with invalid data, the user is prompted to make changes and fill the form out correctly | Attempted to submit a form with invalid data | PASS |
+| Edit Post Page | When submitting the form with valid data, the post is updated in the database and the changes are reflected on the relevant pages | Submitted a form with valid data | PASS |
+| Registration Page | When trying to submit the form with invalid data, the user is prompted to make changes and fill the form out correctly | Attempted to submit the form with invalid data | PASS |
+| Registration Page | When trying to register an account with an existing username, a message is displayed stating that the username is already in use and the page is reloaded | Attempted to submit the form with a username that is already registered | PASS |
+| Registration Page | When submitting the form with valid data, the user is added to the database and the user is logged in automatically | Submitted the form with valid data | PASS |
+| Log In Page | When trying to submit the form with invalid data, the user is prompted to make changes and fill the form out correctly | Attempted to submit the form with invalid data | PASS |
+| Log In Page | When attempting to sign in with a username that is not registered, a message is displayed indicating that the username or password is incorrect | Attempted to submit the form with a username that is not registered | PASS |
+| Log In Page | When attempting to sign in with a correct username, but the incorrect password linked to that username, a message is displayed indicating that the username or password is incorrect | Attempted to submit the form with the incorrect password for an already registered username | PASS |
+| Log In Page | When submitting the form with valid data, the user is logged in | Submitted the form with valid data | PASS |
+| 404 Error Page | When a user navigates to a page that does not exist / the incorrect address is entered, they are directed to a 404 page | Navigated to a page that does not exist on the website | PASS |
+| Missing Permissions Page | When a non-administrator tries to navigate to a page that is admin-only, they are directed to a missing permissions page | Navigated to a page that is admin-only as a non-administrator | PASS | 
+
 ### Validation
 
 #### HTML Validation
@@ -420,7 +462,7 @@ The custom CSS stylesheet style.css was checked using the [W3C CSS Validation Se
 
 #### Python Validation
 
-The app.py Python code was checked using the CI Python Linter. There were a few lines that were too long, which were corrected. The code now passes through the linter and is PEP8 compliant.
+The app.py Python code was checked using the [CI Python Linter](https://pep8ci.herokuapp.com/). There were a few lines that were too long, which were corrected. The code now passes through the linter and is PEP8 compliant.
 
 ![Python Validation](./static/images/documentation/python_validation.png)
 
@@ -452,8 +494,6 @@ When initially testing using Lighthouse, the index page had an SEO score of 90 w
 - [Lighthouse report for add post page - mobile](./static/images/documentation/lighthouse_testing_add_post_mobile.pdf)
 - [Lighthouse report for edit post page - desktop](./static/images/documentation/lighthouse_testing_edit_post_desktop.pdf)
 - [Lighthouse report for edit post page - mobile](./static/images/documentation/lighthouse_testing_edit_post_mobile.pdf)
-
-### Manual Testing
 
 ## Deployment
 
