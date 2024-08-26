@@ -20,7 +20,7 @@ The target audience for this website is people who are similar to myself - peopl
 
 ### User Stories
 
-- As a visitor to the website, I want the navigation between pages and/or areas to be easy and intuitive, not having toe rely on browser buttons.
+- As a visitor to the website, I want the navigation between pages and/or areas to be easy and intuitive, not having to rely on browser buttons.
 - As a visitor to the website, I want the website to be responsive on a number of different devices.
 - As a first time visitor to the website, I would like to easily view other users' posts.
 - As a first time visitor to the website, I would like to be able to view all posts in a specific category.
@@ -94,9 +94,86 @@ The typography for this project was picked using Google Fonts.
 
 ## Features
 
-### Common Features
+### Current Features
 
-### Page Features
+#### Navigation bar
+    
+- The design of the navigation bar is kept consistent across all pages of the website, following convention with the logo / brand text on the left hand side and navigation links on the right.
+- The Navbar is the main method for navigation around the different pages of the website. The links change depending on whether a user is logged in or not.
+- When logged out, the navigation bar includes links to Home, Categories, All Posts, Log In, and Register.
+- When logged in , the navigation bar includes links to Home, Categories, Add Post, All Posts, and Log Out.
+- The navigation bar is fully responsive with smaller screens having a collapsed menu with a navigation toggler button and larger screens having a fully expanded navigation bar.
+- The navigation bar satisfies the first user story as it is easy and intuitive.
+- The navigation bar satisfies the second user story as it is responsive on a number of different devices and it is visually appealing.
+
+![Navbar Logged Out]()
+    
+![Navbar Logged In]()
+
+#### Logo
+
+- The Navbar also contains the main brand logo, which is also a form of navigation, acting as a home button.
+
+![Logo]()
+
+#### Home Page
+
+![Home Page Logged Out]()
+
+![Home Page Logged In]()
+
+![Home Page Logged In Admin]()
+
+- The Home Page features two main sections:
+    - The first section is a card displaying the main brand image along with a comment, introducing users to the concept of the website.
+        - If the user is logged in, a button for adding a post will be displayed.
+    - The second section displays the most recent posts added by users, view post buttons are displayed for each post.
+        - If the user is logged in and one of the recent posts was created by that specific user, buttons for editing and deleting that post will be displayed.
+        - If the user logged in is an admin, buttons for editing and deleting the posts will be displayed.
+
+- The Home Page targets the third, fifth, and twelfth user stories.
+
+#### Categories Page
+
+![Categories Page]()
+
+![Categories Page Admin]()
+
+#### Add Category Page
+
+![Add Category Page]()
+
+#### Edit Category Page
+
+![Edit Category Page]()
+
+#### All Posts Page
+
+![All Posts Page Logged Out]()
+
+![All Posts Page Logged In]()
+
+![All Posts Page Logged In Admin]()
+
+#### Registration Page
+
+![Registration Page]()
+
+#### Log In Page
+
+![Log In Page]()
+
+#### Log Out Function
+
+![Log Out Link]()
+
+#### Add Post Page
+
+![Add Post Page]()
+
+#### Edit Post Page
+
+![Edit Post Page]()
 
 ### Future Features
 
@@ -110,11 +187,12 @@ The typography for this project was picked using Google Fonts.
 - [Bootstrap 5.3.3](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was used to aid with responsive design and styling of the website
 - [Gitpod](https://gitpod.io/): used to create the site (IDE)
 - [Google Fonts](https://fonts.google.com/): used to import the fonts used for this website into the style.css file
+- [Coolors](https://coolors.co/): used for picking a colour scheme
 - [Google Developer Tools](https://developer.chrome.com/docs/devtools/): used for troubleshooting and testing
 - [Git](https://git-scm.com/): used for version control by utilising the Gitpod terminal to commit to Git and push to GitHub
 - [GitHub](https://github.com/): used to save and store the files for the project
 - [MongoDB](https://www.mongodb.com) was used for non-relational database management with Flask
-- [Heroku](https://www.heroku.com/) used for hosting the deployed back-end website
+- [Heroku](https://www.heroku.com/): used for hosting the deployed back-end website
 - [Balsamiq](https://balsamiq.com/): used to create the wireframes during the design process
 - [Am I Responsive?](https://ui.dev/amiresponsive): used to create an image depicting what the website looks like on different devices
 
