@@ -38,6 +38,24 @@ The target audience for this website is people who are similar to myself - peopl
 
 ### Opportunities
 
+Derived from user stories
+| Opportunities | Importance | Viability / Feasibility |
+| ------------- | ---------- | ----------------------- |
+|Easy and intuitive navigation between pages and/or areas | 5 | 5 |
+|Responsive and visually appealing site suitable for mobile, tablet, and desktop screen sizes | 5 | 5 |
+|Allow any user, whether they are logged in or not, to view other users' posts | 5 | 5 |
+|Allow any user, whether they are logged in or not, to view posts in a specific category | 4 | 4 |
+|Allow users to view the most recent posts, useful for those returning to the website | 4 | 4 |
+|Allow new users to easily register for their own account | 5 | 5 |
+|Allow existing users to easily log in to their account | 5 | 5 |
+|Allow logged in users to easily log out of their account | 5 | 5 |
+|Allow users, when logged in, to add their own posts | 5 | 5 |
+|Allow logged in users to edit their existing posts | 5 | 5 |
+|Allow logged in users to delete their existing posts | 5 | 5 |
+|Allow administrator users to manage existing categories | 5 | 5 |
+|Allow administrator users to add new categories | 5 | 5 |
+|Allow administrator users to edit and delete posts created by other users | 5 | 5 |
+
 ### Initial Concept
 
 #### Wireframes
