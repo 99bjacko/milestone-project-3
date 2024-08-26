@@ -27,7 +27,7 @@
         <div class="col-sm-12 mb-5">
             <div class="card">
                 <div class="card-body mt-3 mb-3 text-center">
-                    <h4 class="card-title">{{ post.post_title }}</h4>
+                    <h3 class="card-title">{{ post.post_title }}</h3>
                     <p class="card-text">{{ post.post_description }}</p>
                     <p class="card-text">by: {{ post.created_by }}</p>
                     <a href="{{ url_for('display_post', post_id=post._id)}}" class="btn btn-primary">View Post</a>
