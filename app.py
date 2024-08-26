@@ -210,6 +210,11 @@ def delete_category(category_id):
     return redirect(url_for("login"))
 
 
+@app.route("/get_posts_by_category/<category_name>")
+def get_posts_by_category(category_name):
+    posts = list(mongo.db.posts.find({"category_name": category_name}))
+    return render_template("posts.html", posts=posts, category_name=category_name)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
