@@ -13,7 +13,8 @@
             </div>
         {% endif %}
     {% endif %}
-
+    
+    <!-- Posts -->
     {% if posts|length > 0 %}
     <div class="row">
         {% for post in posts %}
@@ -24,6 +25,7 @@
                     <p class="card-text">{{ post.post_description }}</p>
                     <p class="card-text">{{ post.created_by }} was at {{ post.venue }} to see {{ post.artist_name }}</p>
                     <a href="{{ url_for('display_post', post_id=post._id)}}" class="btn btn-primary">View Post</a>
+                    <!-- Show buttons if admin or user who created this post is logged in -->
                     {% if session.user|lower == post.created_by|lower or admin == "yes" %}
                         <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-secondary">Edit</a>     
                         <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn btn-danger">Delete</a>

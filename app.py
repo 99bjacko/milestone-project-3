@@ -190,8 +190,12 @@ def delete_post(post_id):
 # View Post Page
 @app.route("/display_post/<post_id>")
 def display_post(post_id):
+    admin = ""
+    current_user = session.get('user')
+    if current_user:
+        admin = check_administrator(current_user)
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    return render_template("display_post.html", post=post)
+    return render_template("display_post.html", post=post, admin=admin)
 
 
 # Categories Page
