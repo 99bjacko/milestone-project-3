@@ -573,6 +573,10 @@ To connect the GitHub repository to the Heroku App:
 3. Under "Connect to GitHub", search for your repository and click "Connect"
 4. Enable Automatic Deployment to update the app every time you commit to GitHub.
 
+### Local vs Deployed Site
+
+No differences found between the local and deployed versions of the website.
+
 ## Credits
 
 ### Code
