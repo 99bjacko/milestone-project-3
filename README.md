@@ -515,16 +515,63 @@ The site was deployed using GitHub and is hosted on [Heroku](https://concert-con
 Forking the GitHub repository allows a copy of the original repository to be made without affecting the original repository. This can be achieved by following these steps:
 
 1. Log in to GitHub
-2. Navigate to the GitHub repository for this project, milestone-project-2
+2. Navigate to the GitHub repository for this project, milestone-project-3
 3. Click the Fork button in the top right corner
 
 ### Making a Local Clone
 
 1. Log in to GitHub
-2. Navigate to the GitHub repository for this project, milestone-project-2
+2. Navigate to the GitHub repository for this project, milestone-project-3
 3. To clone the repository using HTTPS, copy the link under "Clone with HTTPS"
 4. Open a GitBash terminal and navigate to the location you want to use for the cloned directory
 5. Use the git clone command with the URL copied in Step 3
+
+### MongoDB Database Setup
+
+To get your own [MongoDB](https://www.mongodb.com) Database URI, sign up on their [website](https://www.mongodb.com) and follow these steps:
+
+1. Create your database's name (e.g. concert_connect).
+2. Create the collection(s) for the database (e.g. categories, posts, users)
+3. Insert the appropriate documents into the collections as detailed in the database section previously.
+4. Click on the Overview tab under the Cluster created for this project.
+5. Click on the Connect button.
+6. Click Connect Your Application (Drivers).
+7. Copy the connection string, replacing `<password>` with the password you have created.
+
+### Deploying Locally
+
+If you are deploying the application locally, you will need to create an env.py file. An example can be found [here](./sample_env.py).
+
+Do not commit your env.py file to GitHub as it contains sensitive information. This can be done by adding the env.py file to a .gitignore file.
+
+### Deploying to Heroku
+
+To deploy your application to [Heroku](https://www.heroku.com/), sign up on their [website](https://www.heroku.com/) and follow these steps:
+
+1. Select "New" > "Create New App"
+2. Create a unique app name and select the server region closest to you
+3. Select "Create App"
+4. In the new app, select "Settings"
+5. Select "Review Config Vars"
+6. Enter the environment variables:
+
+| Key | Value |
+| --- | ----- |
+| IP | 0.0.0.0 |
+| PORT | 5000 |
+| SECRET_KEY | Your secret key |
+| MONGO_URI | Your MongoDB URI |
+| MONGO_DBNAME | Your MongoDB database name |
+
+7. Create the Procfile in the terminal `echo web: python app.py > Procfile`
+8. Create the requirements.txt file in the terminal: `pip3 freeze --local > requirements.txt`
+
+To connect the GitHub repository to the Heroku App:
+
+1. Go to the app in Heroku
+2. Go to the "Deploy" tab
+3. Under "Connect to GitHub", search for your repository and click "Connect"
+4. Enable Automatic Deployment to update the app every time you commit to GitHub.
 
 ## Credits
 
