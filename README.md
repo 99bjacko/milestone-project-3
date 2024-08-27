@@ -577,6 +577,16 @@ To connect the GitHub repository to the Heroku App:
 
 ### Code
 
+- [Bootstrap 5.3.3](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was used throughout the project, utilising the built in Grid System to ensure that the site is responsive across multiple devices.
+
 ### Content
 
+- Example post content was created by the developer.
+- Example post image from [Mojo4Music](https://www.mojo4music.com/articles/stories/taylor-swift-live-review/)
+- Example post image from [OriginalRock](https://originalrock.net/2022/11/15/live-review-biffy-clyro-at-cardiff-motorpoint-arena/)
+
 ### Acknowledgements
+
+- Code Institute for all course material
+- Code Institute Slack community for assistance and guidance on the project
+- My mentor, Rahul, and my cohort facilitator, Amy, for providing feedback and encouragement throughout the process.
