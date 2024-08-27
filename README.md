@@ -502,11 +502,29 @@ When initially testing using Lighthouse, the index page had an SEO score of 90 w
 - [Lighthouse report for edit post page - desktop](./static/images/documentation/lighthouse_testing_edit_post_desktop.pdf)
 - [Lighthouse report for edit post page - mobile](./static/images/documentation/lighthouse_testing_edit_post_mobile.pdf)
 
+## Known Bugs
+
+- Datepicker value on edit post page not being inserted on posts that were already in the database created through the MongoDB website.
+
 ## Deployment
+
+The site was deployed using GitHub and is hosted on [Heroku](https://concert-connect-802cf2f5a70f.herokuapp.com/).
 
 ### Forking the GitHub Repository
 
+Forking the GitHub repository allows a copy of the original repository to be made without affecting the original repository. This can be achieved by following these steps:
+
+1. Log in to GitHub
+2. Navigate to the GitHub repository for this project, milestone-project-2
+3. Click the Fork button in the top right corner
+
 ### Making a Local Clone
+
+1. Log in to GitHub
+2. Navigate to the GitHub repository for this project, milestone-project-2
+3. To clone the repository using HTTPS, copy the link under "Clone with HTTPS"
+4. Open a GitBash terminal and navigate to the location you want to use for the cloned directory
+5. Use the git clone command with the URL copied in Step 3
 
 ## Credits
 
